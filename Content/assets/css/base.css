@@ -1,0 +1,23 @@
+﻿body {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --white-color: #ffff;
+    --black-color: #0000;
+    --blue-color: #10559C;
+    --text-color: #4B4B4B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.active {
+    border-bottom: 2px solid var(--white-color);
+}

@@ -1,0 +1,439 @@
+﻿body {
+}
+/*HEADER*/
+.main-slider {
+    background-image: url("/Content/assets/img-register/bg-main.png");
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+}
+/* Nav Bar */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.action-bar {
+    display: flex;
+    flex-direction: row; /* xếp ngang */
+    gap: 24px; /* chỉnh khoảng cách giữa 2 nút */
+}
+
+.action-btn {
+    background: #DF6951;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background: #cd7b6b;
+}
+
+.navigation img {
+    width: 100px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+position: relative;
+}
+
+.menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+/* submenu ẩn */
+.menu ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.85);
+    padding: 18px 0 10px 0;
+    list-style: none;
+    min-width: 210px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    z-index: 10;
+}
+
+.menu ul li .submenu::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 16px;
+    background: transparent;
+    z-index: 11;
+}
+
+.menu ul li .submenu::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 12px 12px 12px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255,255,255,0.85) transparent;
+    width: 0;
+    height: 0;
+    z-index: 12;
+}
+
+
+/* submenu item */
+.menu ul li .submenu li a {
+    color: #fff;
+    padding: 12px 24px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: transparent;
+    border-radius: 8px;
+    transition: 0.2s, color 0.2s;
+}
+
+.menu ul li .submenu li a:hover {
+    background: rgba(255,255,255,0.18);
+    color: #DF6951;
+}
+
+/* hover vào menu cha thì hiện submenu */
+.menu ul li:hover .submenu {
+    display: block;
+}
+/*thanh toán*/
+.pay-bar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 0vh;
+}
+
+.pay-box {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    height: 580px;
+    width: 1320px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pay-national {
+    margin-top: 90px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    height: 455px;
+    width: 480px;
+}
+
+.pay-national h3 {
+    font-size: 20px;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.pay-national p {
+    font-size: 15px;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pay-national input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.info-atm input {
+    width: 420px;
+    height: 30px;
+}
+
+.item {
+    display: flex;
+    gap: 20px;
+}
+
+.item input {
+    width: 200px;
+    height: 30px;
+}
+/* Thông tin tour */
+.info-tour {
+    width: 350px;
+    margin-left: 20px;
+}
+
+.info-tour h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    margin-top: 40px
+}
+
+.info-tour img {
+    width: 300px;
+    height: 250px;
+    border-radius: 8px;
+}
+
+.info-tour p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.info-tour h2 {
+    font-size: 22px;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+/* Phương thức thanh toán */
+.pay-method h1 {
+    font-size: 28px;
+    margin-top: 40px;
+    color: #2c3e50;
+}
+/*box nhỏ bên trong*/
+.method {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.method h3 {
+    font-size: 20px;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.method p {
+    font-size: 15px;
+    color: #666;
+    margin: 6px 0;
+}
+
+.method img {
+    width: 100px;
+    height: 100px;
+}
+/*ảnh thanh toán*/
+.img-pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.img-pay img {
+    width: 80px;
+    height: 50px;
+}
+/* Nút thanh toán */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #DF6951;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #219150;
+}
+
+.img-pay button1 {
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.img-pay button1:hover {
+    background-color: gainsboro;
+}
+
+/*FOOTER*/
+
+.footer {
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    column-gap: 200px;
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    height: 25vh;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo img {
+    margin-right: 15px;
+}
+
+/*paragraph*/
+.logo p {
+    color: #767096;
+    margin: 15px 15px 30px 0px;
+}
+
+.social-items {
+    text-align: left;
+    margin: 15px 15px 20px 0px;
+}
+
+.social-items a {
+    color: #cd7b6b;
+}
+/*ListBox*/
+.list-box {
+    display: flex;
+    gap: 100px
+}
+/*List1*/
+.list1 p {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.list1 ul {
+    list-style: none;
+}
+
+.list1 ul li {
+    color: #191433;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*List2*/
+.list2 p {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.list2 ul {
+    list-style: none;
+}
+
+.list2 ul li {
+    color: #191433;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*Subscribe bar*/
+.bar {
+    display: flex;
+}
+
+.subscribe {
+    background: #DF6951;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 26px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bar input {
+    background-color: #dedef9;
+    width: 220px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+.img-bottom img {
+    width: 150px;
+    margin-right: 100px;
+}
+
+.subscribe-bar p.p-top {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.subscribe-bar p.p-bottom {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*Copyright*/
+.copyright {
+    justify-items: center;
+}
+
+.copyright p {
+    width: 500px;
+    margin: 30px 0px 30px 250px;
+    color: black;
+}

@@ -1,0 +1,1087 @@
+﻿body {
+}
+/**/
+.main-slider {
+    background-image: url("/Content/assets/img/Logo/Rectangle 19290.png");
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navigation img {
+    width: 100px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.navigation header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-btn, .login-btn {
+    background-color: #df6951;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    transition: 0.3s;
+}
+
+
+.slider {
+    display: flex;
+    margin-top: 200px;
+    width: 100vw;
+    height: 100px;
+    justify-content: space-around;
+}
+
+.slider-prev,
+.slider-next {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider .btn {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    color: var(--white-color);
+    opacity: .8;
+    cursor: pointer;
+}
+
+.slider-wrapper {
+    width: 60vw;
+}
+
+.slider-title {
+    width: 30vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: var(--white-color);
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 18px;
+}
+
+
+.booking-detail .search-bar {
+    margin-right: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.92);
+    padding: 22px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    gap: 18px;
+    margin-bottom: 10px;
+}
+
+.booking-detail-item {
+    text-decoration: none;
+    color: #4B4B4B;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+/* submenu ẩn */
+.menu ul li .submenu {
+display: none;
+position: absolute;
+top: 100%;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(255,255,255,0.92);
+padding: 22px 0 14px 0;
+list-style: none;
+min-width: 230px;
+border-radius: 18px;
+box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+z-index: 10;
+}
+
+.menu ul li .submenu::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 16px;
+    background: transparent;
+    z-index: 11;
+}
+
+.menu ul li .submenu::after {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 16px 16px 16px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255,255,255,0.92) transparent;
+    width: 0;
+    height: 0;
+    z-index: 12;
+}
+
+
+/* submenu item */
+.menu ul li .submenu li a {
+    color: #4B4B4B;
+    padding: 14px 28px;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    background: transparent;
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 8px;
+}
+
+.menu ul li .submenu li a:hover {
+    background: rgba(255,255,255,0.5);
+    color: #DF6951;
+}
+
+/* hover vào menu cha thì hiện submenu */
+.menu ul li:hover .submenu {
+    display: block;
+}
+/* Thanh tìm kiếm booking dạng bar */
+.booking-detail.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.92);
+    padding: 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    gap: 0;
+    margin-bottom: 10px;
+    width: fit-content;
+    margin-right: auto;
+}
+
+.booking-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.7);
+    color: #bdbdbd;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    padding: 22px 28px;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    min-width: 160px;
+    outline: none;
+}
+
+.booking-detail-item:not(:first-child) {
+    border-radius: 0;
+    border-left: 1px solid #ececec;
+}
+
+.booking-detail-item:last-of-type {
+    border-radius: 0 10px 10px 0;
+}
+
+.booking-detail-item:focus,
+.booking-detail-item:hover {
+    background: #fff;
+    color: #DF6951;
+}
+
+.btn_search {
+    background: #DF6951;
+    color: #fff;
+    border: none;
+    border-radius: 0 12px 12px 0;
+    font-size: 18px;
+    padding: 22px 38px;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(223,105,81,0.10);
+    transition: background 0.2s;
+    min-width: 140px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_search:hover,
+.btn_search:focus {
+    background: #c94d36;
+}
+
+.feedback {
+    justify-items: left;
+}
+
+.feedback {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    padding: 12px 24px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 18px;
+    width: fit-content;
+}
+
+.feedback-avatars {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    position: relative;
+}
+
+.feedback-avatars img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+    margin-left: -15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.feedback-avatars img:first-child {
+    margin-left: 0;
+}
+
+.feedback-plus {
+    width: 40px;
+    height: 40px;
+    background: #E25A5A;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    border: 3px solid #fff;
+    margin-left: -15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.feedback-text {
+    margin-left: 8px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* Đối tác */
+.partners {
+    width: 100vw;
+    background: #fff;
+    padding: 36px 0 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partners-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 90vw;
+    max-width: 1100px;
+}
+
+.partner-logo {
+    height: 38px;
+    opacity: 0.7;
+    filter: grayscale(1);
+    transition: opacity 0.2s, filter 0.2s;
+}
+
+.partner-logo:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+/* Dịch vụ tốt nhất */
+.best-service {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    background: #fff;
+}
+
+.best-service .title h5 {
+    color: #df6951;
+    text-align: center;
+    font-size: 20px;
+}
+
+.best-service .title h2 {
+    color: #181e4b;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 12px 0 24px 0;
+}
+
+.best-service .service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+/* romantic land */
+.romantic-land {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 80px 0 80px;
+}
+
+.romantic-land-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    width: 90vw;
+}
+/*romantic land img*/
+.illustration img {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+/*romantic context*/
+.romantic-land-content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.romantic-offer {
+    color: #df6951;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.romantic-title {
+    color: #181e4b;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0 0 8px 0;
+}
+
+.romantic-desc {
+    color: #4B4B4B;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.romantic-btn {
+    background-color: #df6951;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 15px 10px 15px 10px;
+    width: 150px;
+}
+/*Book a trip*/
+.Book-a-trip {
+    display: flex;
+    gap: 20px;
+}
+
+.context {
+    padding: 50px 0 20px 50px;
+    position: relative;
+    background-color: #fff;
+}
+
+.heading p {
+    color: #df6951;
+    font-size: 14px;
+}
+
+.heading h2 {
+    padding: 0 20px 20px 5px;
+    font-size: 50px;
+    color: #181e4b;
+}
+
+.values {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Khoảng cách giữa các mục */
+}
+
+.value1, .value2, .value3 {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.value1 p, .value2 p, .value3 p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.miniBanner img {
+    width: 100%;
+    height: 250px;
+}
+
+/*Europe sectiom*/
+.Europe-Tour {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 80px 0;
+}
+/*chia thành 2 cột*/
+.content-column {
+    flex: 2;
+}
+
+.Eu-illustration {
+    flex: 1;
+}
+/*eu-context*/
+.Eu-context {
+    padding: 50px 0 20px 50px;
+    position: relative;
+    background-color: #fff;
+}
+
+.Eu-context p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #df6951;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Eu-context h2 {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    color: #181e4b;
+    line-height: 1.2; /* Chiều cao dòng để chữ không bị dính vào nhau */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Eu-context button {
+    background-color: #df6951;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 10px;
+    display: grid;
+    margin: 20px 0;
+}
+
+.Eu-context button:hover {
+    background-color: #c94d36;
+    cursor: pointer;
+}
+/*eu-items*/
+.Eu-list-items {
+    display: flex;
+    gap: 20px;
+    padding-left: 50px;
+}
+
+.Eu-list-items div {
+    position: relative;
+}
+
+.Eu-list-items button {
+    border-radius: 10px;
+    background-color: #df6951;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+}
+
+.Eu-list-items button:hover {
+    background-color: #c94d36;
+    cursor: pointer;
+}
+/*Eu-illustration*/
+.Eu-img3 {
+    margin-right: -50px;
+}
+
+.Eu-img4 {
+    position: relative;
+    right: -50px;
+    z-index: 2;
+}
+
+.Eu-illustration {
+    position: relative;
+    z-index: 1;
+}
+
+.Eu-illustration img {
+    width: 100%;
+    height: auto;
+}
+/*special offers*/
+.special-offers {
+    display: flex;
+    font-family: sans-serif;
+}
+
+.offers-card {
+    position: relative;
+    flex: 1;
+    height: 400px;
+    overflow: hidden;
+}
+
+.offers-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy mà không bị méo */
+}
+
+.content-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px
+}
+
+.content-card h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 48px;
+    margin: 10px 0 25px;
+}
+
+.btn-offers {
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-offers:hover {
+    background-color: white;
+    color: #333;
+}
+
+/*Viral-Tours*/
+.viral-tours {
+    padding: 80px 0;
+    background-color: #fff;
+}
+/*header*/
+.viralTours-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.viralTours-header p {
+    color: #df6951;
+    font-size: 18px;
+}
+
+.viralTours-header h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #181e4b;
+    font-weight: 700;
+    margin: 12px 0 24px 0;
+}
+/*card*/
+.viral-packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+.tour-card {
+    background-color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tour-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-wrapper {
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 15px; /* Bằng với border-radius của .tour-card */
+    border-top-right-radius: 15px; /* Bằng với border-radius của .tour-card */
+}
+
+.card-image-wrapper {
+    position: relative;
+    overflow: visible;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.country-flag {
+    position: absolute;
+    left: 18px; /*khoảng cách từ cạnh trái của hình ảnh*/
+    bottom: -22px; /* chồng lên hình ảnh và nằm một phần bên ngoài thẻ */
+    width: 80px; /* đường kính ngoài bao gồm vòng trắng */
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    z-index: 8;
+}
+
+.country-flag-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Đảm bảo nội dung thẻ bên dưới không chồng lên vùng cờ; chừa chỗ cho cờ */
+.tour-card .card-content {
+    padding-top: 26px; /* đệm nhỏ ở trên để bù cho lá cờ chồng lên nhau */
+}
+/*content*/
+.card-content {
+    padding: 40px 25px 25px; /* Padding trên lớn hơn để không bị lá cờ che */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.location h3 {
+    font-size: 24px;
+    color: #2f2f2f;
+    margin: 0;
+}
+
+.location p {
+    font-size: 16px;
+    color: #888;
+    margin: 4px 0 0 0;
+}
+
+.rating {
+    font-size: 22px;
+    color: #ffba0a;
+}
+
+.price .current-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #df6951
+}
+
+.price .original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.description {
+    font-size: 14px;
+    color: #5e6282;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.btn-explore {
+    background-color: #df6951;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 12px 0;
+}
+
+.btn-explore:hover {
+    background-color: #c94d36;
+    cursor: pointer;
+}
+/*Feedback*/
+section.testimonials {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+section.testimonials > img[alt="background"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Lớp dưới cùng */
+}
+
+section.testimonials > img[alt="mini-img"] {
+    position: absolute;
+    z-index: 2; /* Nằm trên ảnh nền */
+    bottom: 20px;
+    left: 0;
+    width: 220px;
+}
+
+.testimonials-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 640px;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: #df6951;
+    font-size: 18px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #181e4b;
+    font-weight: 700;
+    margin: 12px 0 24px 0;
+}
+
+.testimonial-slider {
+    position: relative;
+    text-align: center;
+}
+
+.testimonial-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.quote-box {
+    background-color: white;
+    border-radius: 16px;
+    padding: 60px 40px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.quote-box blockquote {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5e6282;
+    margin: 0 0 20px;
+    font-style: italic;
+}
+
+.quote-box cite {
+    font-weight: bold;
+    color: #181e4b;
+    font-style: normal;
+}
+/* --- NÚT ĐIỀU HƯỚNG SLIDER --- */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 3;
+}
+.slider-arrow:hover {
+    background-color: #df6951;
+    color: white;
+}
+
+.prev-arrow {
+    left: -20px;
+}
+
+.next-arrow {
+    right: 20px;
+    transform: translateY(200%);
+}
+
+/*FOOTER*/
+
+.footer {
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    column-gap: 200px;
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    height: 25vh;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo img {
+    margin-right: 15px;
+}
+
+/*paragraph*/
+.logo p {
+    color: #767096;
+    margin: 15px 15px 30px 0px;
+}
+
+.social-items {
+    text-align: left;
+    margin: 15px 15px 20px 0px;
+}
+
+.social-items a {
+    color: #cd7b6b;
+}
+/*ListBox*/
+.list-box {
+    display: flex;
+    gap: 100px
+}
+/*List1*/
+.list1 p {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.list1 ul {
+    list-style: none;
+}
+
+.list1 ul li {
+    color: #191433;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*List2*/
+.list2 p {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.list2 ul {
+    list-style: none;
+}
+
+.list2 ul li {
+    color: #191433;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*Subscribe bar*/
+.bar {
+    display: flex;
+}
+
+.subscribe {
+    background: #DF6951;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 26px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bar input {
+    background-color: #dedef9;
+    width: 220px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+}
+
+.img-bottom img {
+    width: 150px;
+    margin-right: 100px;
+}
+
+.subscribe-bar p.p-top {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.subscribe-bar p.p-bottom {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*Copyright*/
+.copyright {
+    justify-items: center;
+}
+
+.copyright p {
+    width: 500px;
+    margin: 30px 0px 30px 250px;
+    color: black;
+}

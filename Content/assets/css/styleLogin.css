@@ -1,0 +1,363 @@
+﻿body {
+}
+/*HEADER*/
+.main-slider {
+    background-image: url("/Content/assets/img/Logo/Rectangle\ 19290.png");
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 75vh;
+}
+/* Nav Bar */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.action-bar {
+    display: flex;
+    flex-direction: row; /* xếp ngang */
+    gap: 24px; /* chỉnh khoảng cách giữa 2 nút */
+}
+
+.action-btn {
+    background: #DF6951;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+
+.action-btn:hover {
+    background: #cd7b6b;
+}
+
+
+.navigation img {
+    width: 100px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+position: relative;
+}
+
+.menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+/* submenu ẩn */
+.menu ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.85);
+    padding: 18px 0 10px 0;
+    list-style: none;
+    min-width: 210px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    z-index: 10;
+}
+
+.menu ul li .submenu::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 16px;
+    background: transparent;
+    z-index: 11;
+}
+
+.menu ul li .submenu::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 12px 12px 12px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255,255,255,0.85) transparent;
+    width: 0;
+    height: 0;
+    z-index: 12;
+}
+
+
+/* submenu item */
+.menu ul li .submenu li a {
+    color: #fff;
+    padding: 12px 24px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: transparent;
+    border-radius: 8px;
+    transition: 0.2s, color 0.2s;
+}
+
+.menu ul li .submenu li a:hover {
+    background: rgba(255,255,255,0.18);
+    color: #DF6951;
+}
+
+/* hover vào menu cha thì hiện submenu */
+.menu ul li:hover .submenu {
+    display: block;
+}
+/*vị trí khung tổng*/
+.login-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+}
+/*bên trong khung tổng*/
+.login-box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    height: 400px;
+    width: 350px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #181E4B;
+}
+
+.login-box section {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    font-size: 13px;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.login-box input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.form-links a {
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+/*Chỉnh khung đăng nhập*/
+.login-box button {
+    padding: 12px 70px;
+    background-color: #DF6951;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-box button:hover {
+    background-color: #cd7b6b;
+}
+
+.social-login {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.icons img {
+    width: 50px;
+    height: 40px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+/*Footer*/
+.footer {
+    display: flex;
+    gap: 170px;
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    height: 20vh;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo img {
+    margin-right: 15px;
+}
+
+/*paragraph*/
+.logo p {
+    color: #767096;
+    margin: 15px 10px 30px 5px;
+}
+
+.social-items {
+    text-align: left;
+    margin: 15px 15px 20px 0px;
+}
+
+.social-items a {
+    color: #cd7b6b;
+}
+/*ListBox*/
+.list-box {
+    display: flex;
+    gap: 100px
+}
+/*List1*/
+.list1 p {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.list1 ul {
+    list-style: none;
+}
+
+.list1 ul li {
+    color: #191433;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*List2*/
+.list2 p {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.list2 ul {
+    list-style: none;
+}
+
+.list2 ul li {
+    color: #191433;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*Subscribe bar*/
+.bar {
+    display: flex;
+}
+
+.subscribe {
+    background: #DF6951;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 26px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bar input {
+    background-color: #dedef9;
+    width: 220px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+}
+
+.img-bottom img {
+    width: 150px;
+    margin-left: 0px;
+}
+
+.subscribe-bar p.p-top {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.subscribe-bar p.p-bottom {
+    color: #0d0a1a;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+/*Copyright*/
+.copyright {
+    justify-items: center;
+}
+
+.copyright p {
+    width: 500px;
+    margin: 30px 0px 30px 250px;
+    color: black;
+}
