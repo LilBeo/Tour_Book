@@ -8,17 +8,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
+    <!-- Fontawesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="~/Content/assets/css/base.css" />
-    <link rel="stylesheet" href="~/Content/assets/css/styleGallery.css?v=3" />
+    <link rel="stylesheet" href="~/Content/assets/css/styleDetail.css?v=3" />
 </head>
 <body>
     <!-- Design -> Frontend -->
     <div class="container">
-        <!--All trang-->
         <div class="main-slider">
             <!--Từ header đến đầu footer-->
             <div class="navigation">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="menu">
                     <ul class="menu-list">
-                        <li class="menu-item"><a href="">Home</a></li>
+                        <li class="menu-item"><a href="@Url.Action("Home", "Tour")">Home</a></li>
                         <li class="dropdown">
                             <a href="">Packages</a>
                             <ul class="submenu">
@@ -37,8 +37,8 @@
                                 <li>Self-Select Service</li>
                             </ul>
                         </li>
-                        <li class="menu-item"><a href="">Tour</a></li>
-                        <li class="menu-item"><a href="">About Us</a></li>
+                        <li class="menu-item"><a href="@Url.Action("Travel", "Tour")">Tour</a></li>
+                        <li class="menu-item"><a href="@Url.Action("Aboutus", "Tour")">About Us</a></li>
                         <li class="menu-item"><a href="">Contact</a></li>
                         <li class="dropdown">
                             <a href="">Languages</a>
@@ -63,46 +63,84 @@
                 <h1>Landscapes</h1>
             </div>
         </div>
-    </div>
+     </div>
     <div class="box">
         <div class="otp-bar">
-            <div class="icon-detail">
+            <a href="@Url.Action("Detail", "Information")" class="icon-detail">
                 <i class="fa-solid fa-circle-info"></i>
                 <p>Thông Tin</p>
-            </div>
-            <div class="plan">
+            </a>
+            <a href="@Url.Action("Plan", "Information")" class="plan">
                 <i class="fa-solid fa-calendar"></i>
                 <p>Kế Hoạch Chuyến Đi</p>
-            </div>
-            <div class="icon-location">
+            </a>
+            <a href="@Url.Action("Location", "Information")" class="icon-location">
                 <i class="fa-solid fa-location-dot"></i>
                 <p>Địa Điểm</p>
-            </div>
-            <div class="img-lib">
+            </a>
+            <a href="@Url.Action("Gallery", "Information")" class="img-lib">
                 <i class="fa-solid fa-images"></i>
                 <p>Thư Viện</p>
-            </div>
+            </a>
         </div>
 
         <div class="detail">
-            <div class="left">
-                <div class="gallery-box">
-                    <!-- PHẦN TRÊN -->
-                    <div class="gallery-top">
-                        <img src="~/Content/assets/img-gallery/a1.png" class="img1" alt="">
-                        <img src="~/Content/assets/img-gallery/a2.png" class="img2" alt="">
-                        <img src="~/Content/assets/img-gallery/a3.png" class="img3" alt="">
-                        <img src="~/Content/assets/img-gallery/a4.png" class="img4" alt="">
-                    </div>
+            <div class="left"> 
+                <div class="swit">
+                    <h2 class="title">Switzerland</h2>
+                    <h2 class="money">1,000 $</h2>
+                    <p>/ Mỗi cặp</p>
+                </div>
 
-                    <!-- PHẦN DƯỚI -->
-                    <div class="gallery-bottom">
-                        <img src="~/Content/assets/img-gallery/a5.png" class="img5">
-                        <img src="~/Content/assets/img-gallery/a6.png" class="img6">
-                        <img src="~/Content/assets/img-gallery/a7.png" class="img7">
+                <div class="rate">
+                    <img src="~/Content/assets/img-detail/items-detail/bi_star-fill.png" />
+                    <img src="~/Content/assets/img-detail/items-detail/bi_star-fill.png" />
+                    <img src="~/Content/assets/img-detail/items-detail/bi_star-fill.png" />
+                    <img src="~/Content/assets/img-detail/items-detail/bi_star-fill.png" />
+                    <img src="~/Content/assets/img-detail/items-detail/bi_star-fill.png" />
+                    <p>(2.3k review)</p>
+                </div>
+
+                <p class="paragh">Ex optio sequi et quos praesentium in nostrum labore nam rerum iusto aut magni nesciunt? Quo quidem neque iste expedita est dolor similique ut quasi maxime ut deserunt autem At praesentium voluptatem aut libero nisi. Et eligendi sint ab cumque veritatis aut provident aliquam. Aut aspernatur consequuntur eum quaerat distinctio ut inventore aliquid et quasi alias ut rerum suscipit et nihil deleniti. Ex optio sequi et quos praesentium in nostrum labore nam rerum iusto aut magni nesciunt? Quo quidem neque iste expedita est dolor similique ut quasi maxime ut deserunt autem At praesentium voluptatem aut libero nisi. Et eligendi sint ab cumque veritatis aut provident aliquam. Aut aspernatur consequuntur eum quaerat distinctio ut inventore aliquid et quasi alias ut rerum suscipit et nihil deleniti.</p>
+
+                <div class="detail-form">
+                    <div class="location">
+                        <h1>Địa Điểm</h1>
+                        <p>: Zurich, Switzerland</p>
+                    </div>
+                    <div class="location-start">
+                        <h1>Điểm khởi hành</h1>
+                        <p>: Main Sqaure, New City</p>
+                    </div>
+                    <div class="time-start">
+                        <h1>Thời gian khởi hành</h1>
+                        <p>: Approximately 08 : 10 sáng</p>
+                    </div>
+                    <div class="time-end">
+                        <h1>Thời gian về</h1>
+                        <p>: Approximately 07 : 20 tối</p>
+                    </div>
+                    <div class="rule">
+                        <h1>Quy định trang phục</h1>
+                        <p>: Thoải mái, dễ chịu và nhẹ nhàng</p>
+                    </div>
+                    <div class="excluding">
+                        <h1>Không bao gồm</h1>
+                        <div class="excluding-list">
+                            <p><i class="fa-regular fa-circle-xmark"></i>Vé xem phòng trưng bày </p>
+                            <p><i class="fa-regular fa-circle-xmark"></i>Bữa trưa</p>
+                        </div>
+                    </div>
+                    <div class="inclusive">
+                        <h1>Bao gồm</h1>
+                        <div class="inclusive-list">
+                            <p><i class="fa-regular fa-circle-check"></i>Chỗ ở 5 sao</p>
+                            <p><i class="fa-regular fa-circle-check"></i>Đưa đón sân bay</p>
+                            <p><i class="fa-regular fa-circle-check"></i>Bữa sáng</p>
+                            <p><i class="fa-regular fa-circle-check"></i>Hướng dẫn cá nhân</p>
+                        </div>
                     </div>
                 </div>
-                
             </div>
 
             <div class="right">
@@ -154,12 +192,26 @@
                         Đặt ngay
                     </button>
                 </div>
-                <div class="plane-img">
-                    <img src="~/Content/assets/img-detail/img-picture-box/273 1.png" />
-                </div>
             </div>
         </div>
-        <img src="~/Content/assets/img-location/image 921.png" />
+
+        <h1>Từ bộ sưu tập ảnh của chúng tôi</h1>
+        <div class="bottom">
+            <div class="paragh-bottom">
+                <p>Ex optio sequi et quos praesentium in nostrum labore nam rerum iusto aut magni nesciunt? Quo quidem neque iste expedita est dolor similique ut quasi maxime ut deserunt autem At praesentium voluptatem aut libero nisi. </p>
+                <div class="box-img">
+                    <img src="~/Content/assets/img-detail/img-picture-box/Rectangle 19322.png" />
+                    <img src="~/Content/assets/img-detail/img-picture-box/Rectangle 19323.png" />
+                    <img src="~/Content/assets/img-detail/img-picture-box/Rectangle 19324.png" />
+                    <img src="~/Content/assets/img-detail/img-picture-box/Rectangle 19325.png" />
+                    <img src="~/Content/assets/img-detail/img-picture-box/Rectangle 19326.png" />
+                    <img src="~/Content/assets/img-detail/img-picture-box/Rectangle 19327.png" />
+                </div>
+            </div>
+            <div class="plane-img">
+                <img src="~/Content/assets/img-detail/img-picture-box/273 1.png" />
+            </div>
+        </div>
     </div>
 
     <div class="footer">
@@ -210,4 +262,3 @@
     </div>
 </body>
 </html>
-

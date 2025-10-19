@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Tour_Booking
+namespace Tour_Book
 {
     public class RouteConfig
     {
@@ -17,6 +17,16 @@ namespace Tour_Booking
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Tour", action = "Home", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Author",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Auth", action = "Login", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Information",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Infomation", action = "Detail", id = UrlParameter.Optional }
             );
         }
     }

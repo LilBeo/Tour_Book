@@ -202,6 +202,8 @@
     transition: transform 0.2s; /*animation*/
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    text-decoration: none;
+    color: black;
 }
 
 .box-section:hover {
@@ -228,6 +230,7 @@
     gap: 5px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*taskbar*/
 .taskbar {
     display: flex;

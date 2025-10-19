@@ -121,7 +121,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -307,13 +309,14 @@
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\Tour\Aboutus.cshtml" />
-    <Content Include="Views\Tour\Detail.cshtml" />
-    <Content Include="Views\Tour\Gallery.cshtml" />
     <Content Include="Views\Tour\Home.cshtml" />
-    <Content Include="Views\Tour\Location.cshtml" />
     <Content Include="Views\Tour\Pay.cshtml" />
-    <Content Include="Views\Tour\Plan.cshtml" />
     <Content Include="Views\Tour\Travel.cshtml" />
+    <Content Include="Views\Information\Plan.cshtml" />
+    <Content Include="Views\Information\Detail.cshtml" />
+    <Content Include="Views\Information\Location.cshtml" />
+    <Content Include="Views\Information\Gallery.cshtml" />
+    <Content Include="Views\Header\Head.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

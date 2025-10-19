@@ -13,23 +13,6 @@ namespace Tour_Booking.Controllers
         {
             return View();
         }
-
-        public ActionResult Detail()
-        {
-            return View();
-        }
-        public ActionResult Plan()
-        {
-            return View();
-        }
-        public ActionResult Location()
-        {
-            return View();
-        }
-        public ActionResult Gallery()
-        {
-            return View();
-        }
         public ActionResult Pay()
         {
             return View();

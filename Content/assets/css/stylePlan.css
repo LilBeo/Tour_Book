@@ -157,19 +157,28 @@
 /*GROUP*/
 .icon-detail {
     display: flex;
+    text-decoration: none;
+    color: black;
 }
 
 .plan {
     display: flex;
+    text-decoration: none;
+    color: black;
 }
 
 .icon-location {
     display: flex;
+    text-decoration: none;
+    color: black;
 }
 
 .img-lib {
     display: flex;
+    text-decoration: none;
+    color: black;
 }
+
 
 .otp-bar {
     display: flex;

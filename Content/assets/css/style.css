@@ -136,63 +136,113 @@
     text-decoration: none;
 }
 
-/* submenu ẩn */
-.menu ul li .submenu {
-display: none;
-position: absolute;
-top: 100%;
-left: 50%;
-transform: translateX(-50%);
-background: rgba(255,255,255,0.92);
-padding: 22px 0 14px 0;
-list-style: none;
-min-width: 230px;
-border-radius: 18px;
-box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-z-index: 10;
-}
+    /* --- MENU ITEM CHÍNH --- */
+    .menu ul li a {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        padding: 10px 15px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
 
-.menu ul li .submenu::before {
-    content: "";
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 32px;
-    height: 16px;
-    background: transparent;
-    z-index: 11;
-}
+        /* Gạch chân ẩn giữa */
+        .menu ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #df6951;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
 
-.menu ul li .submenu::after {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 0 16px 16px 16px;
-    border-style: solid;
-    border-color: transparent transparent rgba(255,255,255,0.92) transparent;
-    width: 0;
-    height: 0;
-    z-index: 12;
-}
+        /* Khi hover thì mở rộng từ giữa ra hai bên */
+        .menu ul li a:hover::after {
+            width: 100%;
+        }
 
+        /* Khi hover thì đổi màu chữ */
+        .menu ul li a:hover {
+            color: #df6951;
+        }
 
-/* submenu item */
-.menu ul li .submenu li a {
-    color: #4B4B4B;
-    padding: 14px 28px;
-    display: block;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 400;
-    background: transparent;
-    border-radius: 10px;
-    transition: background 0.2s, color 0.2s;
-    margin: 0 8px;
-}
+    /* Mục đang active */
+    .menu ul li.active a::after {
+        width: 100%;
+    }
 
+    /* --- SUBMENU --- */
+    .menu ul li .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.92);
+        padding: 12px 0;
+        list-style: none;
+        min-width: 230px;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+        z-index: 10;
+    }
+
+        /* Mũi nhọn submenu */
+        .menu ul li .submenu::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 10px 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent rgba(255, 255, 255, 0.92) transparent;
+        }
+
+    /* Hiện submenu khi hover */
+    .menu ul li:hover > .submenu {
+        display: block;
+    }
+
+    /* --- SUBMENU ITEM --- */
+    .menu ul li .submenu li {
+        display: block;
+    }
+
+        .menu ul li .submenu li a {
+            display: block;
+            color: #4B4B4B;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            background: transparent;
+            transition: all 0.2s;
+            border-radius: 8px;
+            position: relative;
+        }
+
+            /* Hiệu ứng hover submenu (cũng có gạch chân giữa) */
+            .menu ul li .submenu li a::after {
+                content: "";
+                position: absolute;
+                bottom: 5px;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background-color: #df6951;
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+                border-radius: 1px;
+            }
+
+            .menu ul li .submenu li a:hover::after {
+                width: 100%;
+            }
+    
 .menu ul li .submenu li a:hover {
     background: rgba(255,255,255,0.5);
     color: #DF6951;

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buổi 3</title>
+    <title></title>
     <!-- Fontawesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
@@ -34,8 +34,8 @@
                                 <li>Self-Select Service</li>
                             </ul>
                         </li>
-                        <li class="menu-item"><a href="">Tour</a></li>
-                        <li class="menu-item"><a href="">About Us</a></li>
+                        <li class="menu-item"><a href="@Url.Action("Travel", "Tour")">Tour</a></li>
+                        <li class="menu-item"><a href="@Url.Action("Aboutus", "Tour")">About Us</a></li>
                         <li class="menu-item"><a href="">Contact</a></li>
                         <li class="dropdown">
                             <a href="">Languages</a>
@@ -76,7 +76,7 @@
                     <button class="action-btn-register">Đăng kí</button>
                 </form>
                 <div class="register-bottom">
-                    Đã có tài khoản? <a href="#">Đăng nhập</a>
+                    Đã có tài khoản? <a href="@Url.Action("Login", "Auth")">Đăng nhập</a>
                 </div>
             </div>
         </div>

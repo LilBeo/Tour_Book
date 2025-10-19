@@ -1,0 +1,206 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        /*HEADER*/
+        .main-slider {
+            position: relative;
+            background-image: url("/Content/assets/img/Logo/Rectangle 19290.png");
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 90vh;
+        }
+
+            .main-slider::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+        /* Nav Bar */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 3; /* above overlay */
+        }
+
+        .action-bar {
+            display: flex;
+            flex-direction: row; /* xếp ngang */
+            gap: 24px; /* chỉnh khoảng cách giữa 2 nút */
+        }
+
+        .action-btn {
+            background: #DF6951;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            .action-btn:hover {
+                background: #cd7b6b;
+            }
+
+        .navigation img {
+            width: 100px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .navigation ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navigation a {
+            color: var(--white-color);
+            text-decoration: none;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+            .menu ul li {
+                position: relative;
+            }
+
+                .menu ul li a {
+                    display: block;
+                    color: #fff;
+                    padding: 10px 15px;
+                    text-decoration: none;
+                }
+                /* submenu ẩn */
+                .menu ul li .submenu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(255,255,255,0.85);
+                    padding: 18px 0 10px 0;
+                    list-style: none;
+                    min-width: 210px;
+                    border-radius: 16px;
+                    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+                    z-index: 10;
+                }
+
+                    .menu ul li .submenu::before {
+                        content: "";
+                        position: absolute;
+                        top: -16px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 32px;
+                        height: 16px;
+                        background: transparent;
+                        z-index: 11;
+                    }
+
+                    .menu ul li .submenu::after {
+                        content: "";
+                        position: absolute;
+                        top: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-width: 0 12px 12px 12px;
+                        border-style: solid;
+                        border-color: transparent transparent rgba(255,255,255,0.85) transparent;
+                        width: 0;
+                        height: 0;
+                        z-index: 12;
+                    }
+                    /* submenu item */
+                    .menu ul li .submenu li a {
+                        color: #fff;
+                        padding: 12px 24px;
+                        display: block;
+                        text-decoration: none;
+                        font-size: 17px;
+                        font-weight: 400;
+                        background: transparent;
+                        border-radius: 8px;
+                        transition: 0.2s, color 0.2s;
+                    }
+
+                        .menu ul li .submenu li a:hover {
+                            background: rgba(255,255,255,0.18);
+                            color: #DF6951;
+                        }
+
+                .menu ul li:hover .submenu {
+                    display: block;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-slider">
+            <div class="navigation">
+                <div class="logo">
+                    <a href="/"><img src="~/Content/assets/img-register/logo (1).png" alt="Logo" /></a>
+                </div>
+                <div class="menu">
+                    <ul class="menu-list">
+                        <li class="menu-item"><a href="">Home</a></li>
+                        <li class="dropdown">
+                            <a href="">Packages</a>
+                            <ul class="submenu">
+                                <li>Honeymoon Package</li>
+                                <li>Travel Package</li>
+                                <li>Self-Select Service</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="">Tour</a></li>
+                        <li class="menu-item"><a href="">About Us</a></li>
+                        <li class="menu-item"><a href="">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="">Languages</a>
+                            <ul class="submenu">
+                                <li>Tiếng Việt</li>
+                                <li>English</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="action-bar">
+                    <button class="action-btn">
+                        Liên hệ <i class="fa-solid fa-phone"></i>
+                    </button>
+                    <button class="action-btn">
+                        Đăng nhập <i class="fa-regular fa-circle-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

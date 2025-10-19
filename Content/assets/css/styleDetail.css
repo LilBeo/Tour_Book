@@ -157,18 +157,38 @@
 /*GROUP*/
 .icon-detail {
     display: flex;
+    text-decoration: none;
+    color: black;
+}
+.icon-detail p:hover{
+    text-decoration: underline;
 }
 
 .plan {
     display: flex;
+    text-decoration: none;
+    color: black;
+}
+.plan p:hover{
+    text-decoration: underline;
 }
 
 .icon-location {
     display: flex;
+    text-decoration: none;
+    color: black;
+}
+.icon-location p:hover{
+    text-decoration: underline;
 }
 
 .img-lib {
     display: flex;
+    text-decoration: none;
+    color: black;
+}
+.img-lib p:hover{
+    text-decoration: underline;
 }
 
 .otp-bar {
