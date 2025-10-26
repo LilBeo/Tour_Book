@@ -1,5 +1,4 @@
-﻿body {
-}
+﻿.body{}
 /**/
 .main-slider {
     background-image: url("/Content/assets/img/Logo/Rectangle 19290.png");
@@ -135,6 +134,7 @@
     padding: 10px 15px;
     text-decoration: none;
 }
+    
 
     /* --- MENU ITEM CHÍNH --- */
     .menu ul li a {
@@ -161,14 +161,14 @@
         }
 
         /* Khi hover thì mở rộng từ giữa ra hai bên */
-        .menu ul li a:hover::after {
+        .menu ul li a.active-hover::after {
             width: 100%;
         }
 
-        /* Khi hover thì đổi màu chữ */
-        .menu ul li a:hover {
+        .menu ul li a.active-hover {
             color: #df6951;
         }
+
 
     /* Mục đang active */
     .menu ul li.active a::after {
@@ -991,7 +991,8 @@ section.testimonials > img[alt="mini-img"] {
 }
 
 .prev-arrow {
-    left: -20px;
+    left: 10px;
+    transform: translateY(200%);
 }
 
 .next-arrow {

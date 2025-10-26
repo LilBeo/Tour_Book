@@ -1,5 +1,4 @@
-﻿body {
-}
+﻿
 /*HEADER*/
 .main-slider {
     position: relative;
@@ -24,32 +23,34 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: relative;
-    z-index: 3; /* above overlay */
 }
 
-.action-bar {
-    display: flex;
-    flex-direction: row; /* xếp ngang */
-    gap: 24px; /* chỉnh khoảng cách giữa 2 nút */
-}
+    .navigation img {
+        width: 100px;
+    }
 
-.action-btn {
-    background: #DF6951;
-    color: #fff;
-    border: none;
+    .navigation ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .navigation a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+
+    .navigation header-buttons {
+        display: flex;
+        gap: 15px;
+    }
+
+.contact-btn, .login-btn {
+    background-color: #df6951;
+    color: white;
+    text-decoration: none;
     border-radius: 8px;
-    padding: 12px 24px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.action-btn:hover {
-    background: #cd7b6b;
+    padding: 10px 18px;
+    transition: 0.3s;
 }
 
 .navigation img {
@@ -555,22 +556,23 @@ section.testimonials > img[alt="mini-img"] {
     z-index: 3;
 }
 
-.slider-arrow:hover {
-    background-color: #df6951;
-    color: white;
-}
+    .slider-arrow:hover {
+        background-color: #df6951;
+        color: white;
+    }
 
 .prev-arrow {
-    left: -20px;
+    left: 10px;
+    transform: translateY(200%);
 }
 
 .next-arrow {
     right: 20px;
     transform: translateY(200%);
 }
-/*FOOTER*/
 
-.footer {
+/*FOOTER*/
+.footer{
     position: relative;
     flex-wrap: wrap;
     display: flex;

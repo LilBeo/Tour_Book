@@ -288,7 +288,7 @@ button {
 }
 
 button:hover {
-    background-color: #219150;
+    background-color: #cd7b6b;
 }
 
 .img-pay button1 {
@@ -436,4 +436,20 @@ button:hover {
     width: 500px;
     margin: 30px 0px 30px 250px;
     color: black;
+}
+/*xử lí hover*/
+.menu ul li a.active-hover {
+    color: #00bcd4;
+    transition: color 0.3s;
+}
+
+.menu ul li a.active-page {
+    color: #ff9800;
+    font-weight: bold;
+    border-bottom: 2px solid #ff9800;
+}
+/*chọn logo ngân hàng*/
+.img-pay button1.selected {
+    background-color: #d1e7ff;
+    border: 2px solid #2980b9;
 }

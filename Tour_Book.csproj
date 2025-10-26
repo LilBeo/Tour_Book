@@ -206,6 +206,7 @@
     <Content Include="Content\assets\img-register\logo %281%29.png" />
     <Content Include="Content\assets\img-register\logo %282%29.png" />
     <Content Include="Content\assets\img-register\Vector 1.png" />
+    <Content Include="Content\assets\img-travel\273 1.png" />
     <Content Include="Content\assets\img-travel\airplane.jpg" />
     <Content Include="Content\assets\img-travel\background 2.jpg" />
     <Content Include="Content\assets\img-travel\Baku.png" />
@@ -291,6 +292,16 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JS\Auth\login.js" />
+    <Content Include="Scripts\JS\Auth\register.js" />
+    <Content Include="Scripts\JS\Information\detail.js" />
+    <Content Include="Scripts\JS\Information\gallery.js" />
+    <Content Include="Scripts\JS\Information\location.js" />
+    <Content Include="Scripts\JS\Information\plan.js" />
+    <Content Include="Scripts\JS\Tour\aboutUs.js" />
+    <Content Include="Scripts\JS\Tour\pay.js" />
+    <Content Include="Scripts\JS\Tour\travel.js" />
+    <Content Include="Scripts\JS\Tour\home.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
