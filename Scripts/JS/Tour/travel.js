@@ -1,86 +1,12 @@
-﻿// main.js
-document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = window.location.pathname.toLowerCase();
-    const menuItems = document.querySelectorAll(".menu-list a");
+﻿/* main.js
+   Interactive behaviors for Home page
+   - Mobile menu toggle
+   - Dropdown submenus (click to open on touch devices)
+   - Booking bar custom selectors (destination, package type, time)
+   - Testimonial carousel with autoplay and keyboard controls
 
-    menuItems.forEach(link => {
-        if (link.href.toLowerCase().includes(currentPage)) {
-            link.classList.add("active");
-        }
-
-        link.addEventListener("mouseenter", () => {
-            link.style.color = "#DF6951";
-        });
-        link.addEventListener("mouseleave", () => {
-            if (!link.classList.contains("active")) {
-                link.style.color = "#fff";
-            }
-        });
-    });
-});
-const buttons = document.querySelectorAll(".menu-button");
-const boxes = document.querySelectorAll(".travel-section .box-section");
-
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        // bỏ active cũ, thêm active mới
-        buttons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        // xử lý lọc/sắp xếp
-        const text = button.textContent.toLowerCase();
-        if (text.includes("thấp đến cao")) sortTours("asc");
-        else if (text.includes("cao đến thấp")) sortTours("desc");
-        else if (text.includes("tên")) sortTours("name");
-    });
-});
-
-function sortTours(type) {
-    const container = document.querySelector(".travel-section");
-    const tours = Array.from(container.querySelectorAll(".box-section"));
-
-    let sorted = [...tours];
-    if (type === "asc") {
-        sorted.sort((a, b) => getPrice(a) - getPrice(b));
-    } else if (type === "desc") {
-        sorted.sort((a, b) => getPrice(b) - getPrice(a));
-    } else if (type === "name") {
-        sorted.sort((a, b) => a.querySelector("h2").textContent.localeCompare(b.querySelector("h2").textContent));
-    }
-
-    sorted.forEach(el => container.appendChild(el));
-}
-
-function getPrice(tour) {
-    return parseFloat(tour.querySelector(".price").textContent.replace("$", "").replace(",", ""));
-}
-const boxes2 = document.querySelectorAll(".box-section");
-
-boxes2.forEach(box => {
-    const img = box.querySelector("img");
-    box.addEventListener("mouseenter", () => {
-        img.style.opacity = "0.8";
-    });
-    box.addEventListener("mouseleave", () => {
-        img.style.opacity = "1";
-    });
-});
-const priceRange = document.getElementById("price-range");
-const priceText = document.querySelector(".price-filter p");
-
-priceRange.addEventListener("input", () => {
-    const val = priceRange.value;
-    priceText.textContent = `Giá: $12 – $${val}`;
-});
-/* navigation.js
-   -------------------------
-   Chức năng:
-   - Toggle menu trên mobile (ẩn/hiện menu)
-   - Dropdown submenu (Packages, Languages, ...)
-   - Hover effect cho menu item
-   - Giữ hành vi thân thiện với desktop & mobile
+   Comments and labels are in Vietnamese for easier maintenance.
 */
-
 (function () {
     'use strict';
 
@@ -90,31 +16,23 @@ priceRange.addEventListener("input", () => {
     function on(el, event, cb) { if (!el) return; el.addEventListener(event, cb); }
 
     document.addEventListener('DOMContentLoaded', function () {
-        // === MOBILE MENU TOGGLE ===
+        // MOBILE MENU TOGGLE
         var nav = qs('.navigation');
         var menuList = qs('.menu-list');
-
         if (nav && menuList) {
             var toggle = document.createElement('button');
             toggle.className = 'menu-toggle';
             toggle.type = 'button';
             toggle.setAttribute('aria-expanded', 'false');
             toggle.innerHTML = '☰';
-            toggle.style.cssText = `
-                font-size: 22px;
-                border: none;
-                background: transparent;
-                color: #fff;
-                cursor: pointer;
-                padding: 8px;
-                display: none;
-            `;
+            toggle.style.cssText = 'font-size:22px;border:none;background:transparent;color:#fff;cursor:pointer;padding:8px;display:none;';
             nav.insertBefore(toggle, nav.firstChild);
 
-            // Hiển thị nút toggle khi màn hình nhỏ
+            // show toggle only on small screens
             function refreshToggleVisibility() {
                 if (window.innerWidth < 900) {
                     toggle.style.display = 'inline-block';
+                    // hide menu by default on small screens
                     if (!menuList.classList.contains('open')) menuList.style.display = 'none';
                 } else {
                     toggle.style.display = 'none';
@@ -123,20 +41,106 @@ priceRange.addEventListener("input", () => {
                     toggle.setAttribute('aria-expanded', 'false');
                 }
             }
-
             on(window, 'resize', refreshToggleVisibility);
             refreshToggleVisibility();
 
-            // Khi click vào toggle => mở/đóng menu
             on(toggle, 'click', function () {
                 var open = menuList.classList.toggle('open');
                 toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
                 menuList.style.display = open ? 'flex' : 'none';
-                menuList.style.flexDirection = window.innerWidth < 900 ? 'column' : 'row';
+                menuList.style.flexDirection = 'row';
+                if (window.innerWidth < 900) menuList.style.flexDirection = 'column';
             });
         }
-    });
-});
+
+        // SUBMENU HANDLING: make dropdowns clickable on touch devices and close when clicking outside
+        qsa('.menu-item.dropdown').forEach(function (item) {
+            var trigger = qs(':scope > a', item);
+            var submenu = qs(':scope > .submenu', item);
+            if (!trigger || !submenu) return;
+
+            // If device supports touch, allow click to toggle submenu
+            function isTouch() { return ('ontouchstart' in window) || navigator.maxTouchPoints > 0; }
+            if (isTouch()) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var open = item.classList.toggle('open');
+                    submenu.style.display = open ? 'block' : 'none';
+                });
+            }
+        });
+
+        // Close open submenus and custom dropdowns when clicking outside
+        document.addEventListener('click', function (e) {
+            // close menu-item dropdowns
+            qsa('.menu-item.dropdown.open').forEach(function (it) {
+                if (!it.contains(e.target)) {
+                    it.classList.remove('open');
+                    var sub = qs(':scope > .submenu', it);
+                    if (sub) sub.style.display = '';
+                }
+            });
+            // close booking custom dropdowns
+            qsa('.custom-dropdown').forEach(function (dd) {
+                if (!dd.contains(e.target)) dd.parentNode.removeChild(dd);
+            });
+        });
+
+        // BOOKING BAR: custom dropdown selectors
+        var bookingButtons = qsa('.booking-detail .booking-detail-item');
+        var bookingOptions = [
+            ['Hà Nội', 'Hồ Chí Minh', 'Đà Nẵng', 'Phú Quốc', 'Đà Lạt'],
+            ['Tour Trọn Gói', 'Tự chọn dịch vụ', 'Tour Hướng dẫn', 'Bay + Khách sạn'],
+            ['01/11/2025', '05/11/2025', '10/11/2025', '20/11/2025']
+        ];
+
+        bookingButtons.forEach(function (btn, idx) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                // remove other open dropdowns
+                qsa('.custom-dropdown').forEach(function (d) { d.parentNode.removeChild(d); });
+
+                var rect = btn.getBoundingClientRect();
+                var dd = document.createElement('ul');
+                dd.className = 'custom-dropdown';
+                dd.style.position = 'absolute';
+                dd.style.zIndex = 9999;
+                dd.style.listStyle = 'none';
+                dd.style.background = '#fff';
+                dd.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+                dd.style.borderRadius = '10px';
+                dd.style.padding = '8px 0';
+                dd.style.minWidth = Math.max(180, rect.width) + 'px';
+                // position below the button
+                var top = window.scrollY + rect.bottom + 6;
+                var left = window.scrollX + rect.left;
+                dd.style.top = top + 'px';
+                dd.style.left = left + 'px';
+
+                var options = bookingOptions[idx] || ['Option 1', 'Option 2'];
+                options.forEach(function (opt) {
+                    var li = document.createElement('li');
+                    li.textContent = opt;
+                    li.style.padding = '8px 16px';
+                    li.style.cursor = 'pointer';
+                    li.addEventListener('mouseenter', function () { li.style.background = '#f5f5f5'; });
+                    li.addEventListener('mouseleave', function () { li.style.background = ''; });
+                    li.addEventListener('click', function (ev) {
+                        ev.stopPropagation();
+                        // set selected text inside the button (preserve icons if any)
+                        var icon = '';
+                        var iEl = qs('i', btn);
+                        if (iEl) icon = iEl.outerHTML + ' ';
+                        btn.innerHTML = icon + '<span>' + opt + '</span>' + ' <i class="fa-solid fa-chevron-down"></i>';
+                        if (dd && dd.parentNode) dd.parentNode.removeChild(dd);
+                    });
+                    dd.appendChild(li);
+                });
+
+                document.body.appendChild(dd);
+            });
+        });
 // Footer - gửi email subscribe
 document.addEventListener("DOMContentLoaded", function () {
     const subscribeBtn = document.querySelector(".subscribe");
